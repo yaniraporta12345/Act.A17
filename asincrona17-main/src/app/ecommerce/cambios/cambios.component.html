@@ -1,0 +1,32 @@
+
+<!-- formulario de edicion -->
+<article class="form-container" *ngFor="let item of  valores">
+  <form class="bg-light" *ngIf="item.id == idProducto">
+    <h2>Producto N° : {{item.id}}</h2>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Codigo</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="codigo de barra"[value]=item.codigo [disabled]="habilitado3">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [value]=item.descripcion [disabled]="habilitado3"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Precio de Venta s/.</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="precio venta" [value]=item.precioVenta [disabled]="habilitado3">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Precio de Compra s/.</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="precio compra" [value]=item.precioCompra [disabled]="habilitado3">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Existencia</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="existencia" [value]=item.existencia [disabled]="habilitado3">
+    </div>
+    <article class="btn2">
+      <button type="button" class="btn btn-success"(click)="habilitar()" [disabled]="habilitado2">Modificar</button>
+      <button type="button" class="btn btn-warning" routerLink="/cambios/:datos/:idp" [disabled]="habilitado" >Guardar</button>
+    </article>
+  </form>
+</article>
+
